@@ -1,0 +1,130 @@
+<div class="container">
+    <div class="basetext"><span style="color:#aaa6a6">Home/</span>Cart</div>
+
+
+    <div *ngFor="let book of allcart">
+        <mat-card class="card">
+            <div class="mycart">
+                <div class="leftmycart">
+            <mat-card-title class="card-title">My Cart({{allcart.length}})</mat-card-title>
+            </div>
+
+            <div class="rightmycart">
+                
+            </div>
+            </div>
+
+            <div class="maincard">
+        <div class="leftcard">
+            <img src={{book.bookImage}} id="bookimage">
+        </div>
+
+                <div class="rightcard">
+                    <div class="card-title">{{book.bookName}}</div>
+                    <div  class="author">By {{book.authorName}}</div>
+                    <div  class="" style="margin-top: 7px;"><span></span> <strong class="card-title">Rs. {{book.discountPrice * book.bookQuantity}} /-</strong>   <span class="author discountedprice" >   Rs. {{book.actualPrice * book.bookQuantity}}</span></div>
+                 
+                    <div class="qntmainbtn">
+                       <div><button class="qntbtn" (click)="lessQnt(book)">-</button></div>
+                       <div class="boxqnt">{{book.bookQuantity}}</div>
+                       <div><button class="qntbtnn" (click)="addQnt(book)">+</button></div>
+                       <div><button class="removebtn" (click)="Remove(book)">Remove</button></div>
+                       
+                    </div>
+
+                </div>
+
+            </div>
+            
+            </mat-card>
+    </div>
+
+
+
+
+<!-- Address section-->
+<mat-card class="card">
+    <mat-card-title class="add-title">Contact Address</mat-card-title>
+
+    <div class="mainadd">
+
+        <div class="leftadd">
+            <mat-card-title class="addname">FullName</mat-card-title>
+
+            <input type="text"placeholder="Enter Name" class="addresstext" value="{{UserArray.fullName}}" required/>
+
+        </div>
+
+        <div class="rightadd">
+            <mat-card-title class="addname">Mobile Number</mat-card-title>
+            <input type="text"placeholder="Enter Number" class="addresstext" value="{{UserArray.mobile}}" required/>
+        </div>
+
+    </div><br>
+
+    <div class="addresspart">
+    <mat-card-title class="addwork">Work</mat-card-title>
+    <mat-card-title class="addname">Address</mat-card-title>
+    <input type="text" placeholder="Enter Address" value="Smriti Nagar Bhilai" class="addarea" required/>
+    </div>
+
+
+    <div class="mainadd">
+
+        <div class="leftadd">
+            <mat-card-title class="addname">City Town</mat-card-title>
+
+            <input type="text"placeholder="Enter City" class="addresstext" value="Bhilai" required/>
+
+        </div>
+
+        <div class="rightadd">
+            <mat-card-title class="addname">State</mat-card-title >
+            <input type="text"placeholder="Enter State" class="addresstext" value="CG" required/>
+        </div>
+        </div><br>
+
+        
+        <mat-card-title class="addname" style="margin-left: 20px;">Type</mat-card-title>
+           
+                     
+        <div class="radio" >
+            <label for="HOME">Home</label>
+            <input type="radio" (click)="addvalue(1)"  formControlName="type" checked id="home" name="type" value=1>
+             <label for="OFFICE"  style="margin-left: 100px;">Office</label>
+             <input type="radio" (click)="addvalue(1)" formControlName="type"  id="office" name="type" value=2>
+            <label for="OTHER" style="margin-left: 100px;">Other</label>
+            <input type="radio" (click)="addvalue(1)" formControlName="type" id="other" name="type" value=3>
+            
+            </div> 
+     
+
+    </mat-card>
+
+    <!--  Order Summary -->
+
+    <div *ngFor="let book of allcart">
+        <mat-card class="card">
+
+            <mat-card-title class="add-title">Order Summery</mat-card-title>
+
+            <div class="maincard">
+
+        <div class="leftcard">
+            <img src={{book.bookImage}} id="bookimage">
+        </div>
+
+                <div class="rightcard">
+                    <div  class="card-title">{{book.bookName}}</div>
+                    <div id="" class="author">By {{book.authorName}}</div>
+                    <div  class="" style="margin-top: 7px;"><span></span> <strong class="card-title">Rs. {{book.discountPrice * book.bookQuantity}} /-</strong>   <span class="author discountedprice" >   Rs. {{book.actualPrice}}</span></div>
+               
+                </div>
+            </div>
+
+            <input type="Submit" value="Checkout" class="submit" (click)="Checkout(book.bookId,book.bookQuantity)" />
+            
+            </mat-card>
+    </div><br><br>
+
+    </div>

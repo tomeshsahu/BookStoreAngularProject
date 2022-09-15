@@ -1,0 +1,76 @@
+.head{
+    background-color: brown;
+    padding:12px;
+    color: white;
+    width: 100%;
+    top:-60%;
+}
+.navbar{
+    position: fixed;
+    z-index: 1;
+}
+
+.nav{
+margin-left:20px;
+}
+
+.marginmain{
+    display: flex;
+    flex-direction: row; 
+}
+.searchboxx{
+    position: relative;
+    width: 70%;
+    border:0px;
+    margin-left: 10px;
+    top:-10px;
+    
+}
+.searchboxx::placeholder{
+    border: 0px;
+}
+
+
+.searchbody{
+    background-color: white;
+    margin-left: 46px;
+    width:38%;
+    height: 32px;
+    border-radius: 3px;
+}
+
+.icons
+{
+    display: flex;
+    margin-left: 70px;
+}
+
+.example-icon{
+    background-color: brown;
+    border:none;
+    color:white;
+    margin-left: 20px;
+    cursor: pointer;
+   
+}
+
+.content{
+ position: relative;
+    top:10%;
+}
+.mat-toolbar-row, .mat-toolbar-single-row
+{
+    top:-2px;
+    
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+

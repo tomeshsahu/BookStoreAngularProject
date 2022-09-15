@@ -1,0 +1,144 @@
+.main{
+    display: flex;
+    margin-top: 22px;
+}
+
+#bookimg{
+    height: 300px;
+    width:220px;
+    padding:10px;
+}
+
+.leftbook{
+    top:20%;
+    margin-left: 100px;
+}
+
+.rightbook{
+margin-left: 40px;
+}
+
+.card-title{
+    font-size: 20px; 
+    padding:10px;
+}
+
+.author{
+    font-size: 14px;
+    color:gray;
+    margin-left: 10px;
+}
+
+.badge{
+    height: 25px;
+    width:50px;
+    background-color: green;
+    color:white;
+    margin-left:10px;
+    text-align: center;
+}
+
+.star{
+    height: 15px;
+    width: 16px;
+    margin-top: 3px;
+}
+
+.discountedprice{
+    margin-left:10px;
+    text-decoration: line-through;
+    color:rgb(53, 50, 50);
+}
+.price{
+    font-size: 22px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.hrr{
+    margin-left: 10px;
+    width:500px;
+    margin-top:20px;
+}
+.card-content{
+    margin-top: 20px;
+    font-size: 15px;
+    color:grey;
+    min-width:20px;
+    margin-left: 11px;
+}
+
+.card-feedback{
+    background-color: rgb(236, 233, 233);
+    height: 130px;
+    width: 500px;
+    margin-top: 1px;
+    padding:4px;
+}
+
+.feedbacktext{
+    border:none;
+    width:470px;
+    height:35px;
+    margin-left: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.submit{
+    background-color:#3371B5;
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    width: 100px;
+    height: 33px;
+    border:none;
+    margin-left: 390px;
+}
+
+.leftbtn
+{
+    height: 50px;
+    width:130px;
+    background-color: brown;
+    color:white;
+    font-size: 18px;
+    border:none;
+    font-size: 14px;
+}
+
+.rightbtn
+{
+    height: 50px;
+    width:130px;
+    background-color:rgb(32, 30, 30);
+    color:white;
+    font-size: 15px;
+    border:none;
+    font-size:14px;
+}
+
+.imgbtn{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.ratingflex{
+    display: flex;
+}
+.rating{
+    font-size: 19px;
+    margin-left: 10px;
+}
+
+.basetext{
+    font-size: 16px;
+    margin-left: 105px;
+    margin-top: 20px;
+
+    
+}
+.starrrr:clicked
+{
+    width:20px ;
+    height: 20px;
+}

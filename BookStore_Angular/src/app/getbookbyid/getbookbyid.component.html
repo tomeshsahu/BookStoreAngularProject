@@ -1,0 +1,46 @@
+ <div class="container">
+    <div class="basetext"><span style="color:#aaa6a6">Home/</span>Books</div>
+<div class="main">
+
+    <div class="leftbook">
+        
+       <mat-card>
+           
+    <img src='{{getbook.bookImage}}' id="bookimg"/>
+    </mat-card>
+    
+    <div class="imgbtn">
+        <button (click)="AddToCart(getbook)" class="leftbtn">ADD TO CART</button>
+        <button (click)="WishList(getbook)" class="rightbtn">WISHLIST</button>
+</div>
+    
+     
+</div>
+
+<div class="rightbook">
+    <mat-card-title class="card-title">{{getbook.bookName}}</mat-card-title>
+    <mat-card-title  class="author">By {{getbook.authorName}}</mat-card-title>
+    <div class="ratingflex" ><div class="badge">{{getbook.totalRating}} <img src="../../../assets/starr.png" class="star">  </div><div class="rating">({{getbook.ratingCount}})</div></div>
+    <div  class="price"><span></span> <strong>Rs. {{getbook.actualPrice}} /-</strong>   <span class="discountedprice" >   Rs. {{getbook.discountedPrice}}</span></div>
+    <hr class="hrr">
+
+    <mat-card-title class="card-content">{{getbook.description}}</mat-card-title>
+
+    <hr class="hrr">
+
+    <mat-card-title class="card-title"> Customer Feedback</mat-card-title>
+    <div class="card-feedback">
+        <mat-card-content class="card-content">Overall Rating</mat-card-content>
+    <img src="../../../assets/starrr.svg" class="starrrr">
+
+       
+        <textarea placeholder="Write Your Review" class="feedbacktext"></textarea>
+        <input type="Submit" value="Submit" class="submit"/>
+    </div>
+
+</div>
+
+</div>
+
+
+</div> 
