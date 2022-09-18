@@ -16,6 +16,9 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { AuthenticationGuard } from 'src/Authgaurd/authentication.guard';
 
 
+
+
+
 const routes: Routes = [
 
 {
@@ -45,7 +48,8 @@ const routes: Routes = [
   {path:'getwishlist',component:GetwishlistComponent},
   {path:'myprofile',component:MyprofileComponent},
   {path:'getorders',component:GetallordersComponent},
-  {path:'orderplaced',component:OrderplacedComponent}
+  {path:'orderplaced',component:OrderplacedComponent},
+
 
 ]
 }

@@ -63,3 +63,46 @@
     margin-left: 290px;
     margin-top: 20px;
 }
+
+
+@media screen and (max-width:600px)  {
+    .basetext{
+        margin-left: 20px;
+    }
+    .toppanel{
+        width:80%;
+    }
+    .card{
+        width:80%;
+    }
+    .leftcard{
+        margin-left:5px;
+    }
+    .rightcard{
+            margin-left: 30px;
+    }
+    .remvebtn{
+        margin-left:40px;
+    }
+}
+
+@media screen and (min-width:601px) and (max-width:1250px)
+{  .basetext{
+    margin-left: 20px;
+}
+.toppanel{
+    width:80%;
+}
+.card{
+    width:80%;
+}
+.leftcard{
+    margin-left:5px;
+}
+.rightcard{
+        margin-left: 30px;
+}
+.remvebtn{
+    margin-left:100px;
+}
+}

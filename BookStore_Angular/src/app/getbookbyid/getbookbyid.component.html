@@ -28,19 +28,64 @@
 
     <hr class="hrr">
 
-    <mat-card-title class="card-title"> Customer Feedback</mat-card-title>
-    <div class="card-feedback">
-        <mat-card-content class="card-content">Overall Rating</mat-card-content>
-    <img src="../../../assets/starrr.svg" class="starrrr">
+    <mat-card style="margin-top: 30px;">
+        <span style="font-size: 20px;">Customer Feedback</span>
+        <mat-card class="ratingcard">
+            <span>Overall rating</span>
+            <div>
+                <div class="rate">
 
-       
-        <textarea placeholder="Write Your Review" class="feedbacktext"></textarea>
-        <input type="Submit" value="Submit" class="submit"/>
-    </div>
+                    <input type="radio" id="star5" name="rate" [(ngModel)]="rating" value="5" />
+                    <label for="star5" title="Extremely Good"></label>
+                    <input type="radio" id="star4" name="rate" [(ngModel)]="rating" value="4" />
+                    <label for="star4" title="Very Good"></label>
+                    <input type="radio" id="star3" name="rate" [(ngModel)]="rating" value="3" />
+                    <label for="star3" title="Good"></label>
+                    <input type="radio" id="star2" name="rate" [(ngModel)]="rating" value="2" />
+                    <label for="star2" title="Not Bad"></label>
+                    <input type="radio" id="star1" name="rate" [(ngModel)]="rating" value="1" />
+                    <label for="star1" title="Bad"></label>
+                </div>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <input style="width:80%;height:40px;border-radius: 5px;" placeholder="Enter you view"
+                    [(ngModel)]="comment">
+            </div>
 
+            <div fxLayoutAlign="end center">
+                <button (click)="addFeedback(getbook)"
+                    class="submit">Submit</button>
+            </div>
+        </mat-card>
+    </mat-card>
+   <mat-card style="margin-top: 40px; border: none;" fxLayout="column">
+        <div fxLayoutGap="20px" *ngFor="let feedback of booksArr" style="margin-left: 20px;">
+            <div>
+                <span class="user-feedback"> {{(feedback.fullName)}}</span>
+            </div>
+         
+
+            <div style="font-size: 28px;color: orange;padding-top: 10px;">
+
+                <div class="rate">
+                    <input type="radio" value=readonly   value="{{feedback.totalRating}" value="5" />
+                    <label for="star5"  title="Extremely Good"></label>
+                    <input type="radio" value=readonly  value="{{feedback.totalRating}}"  value="4" />
+                    <label for="star4"  title="Very Good"></label>
+                    <input type="radio"value=readonly   value="{{feedback.totalRating}}" value="3" />
+                    <label for="star3"  title="Good"></label>
+                    <input type="radio" value=readonly   value="{{feedback.totalRating}}" value="2" />
+                    <label for="star2" title="Not Bad"></label>
+                    <input type="radio" value=readonly   value="{{feedback.totalRating}}" value="1" />
+                    <label for="star1" title="Bad"></label>
+                </div>
+
+                </div>
+            <div style="padding-top: 10px">
+                <span class="user-comment"> {{feedback.comment}}</span>
+            </div>
+        </div>
+    </mat-card>
 </div>
-
 </div>
-
-
-</div> 
+</div>

@@ -1,12 +1,29 @@
+
+<div class="baseFlex">
 <div class="basetext">Books<span style="color:rgb(172, 169, 169);margin-left:3px;">({{BooksList.length}} items)</span></div>
+
+<div class="rightflex">
+  <div >
+    <mat-form-field appearance="outline">
+        <mat-label>Sort by relevance</mat-label>
+        <mat-select class="matselect">
+          <mat-option clicked (click)="newestarrivals()" value="third">Newest Arrivals</mat-option>
+            <mat-option (click)="lowtohigh()" value="one">Price:Low to High</mat-option>
+            <mat-option (click)=" hightolow()" value="two">Price:High to Low</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+</div>
+</div>
+
 <div class="container" >
   
 
-    <div class="note" *ngFor="let book of BooksList ">
+    <div class="note" *ngFor="let book of BooksList  | pipefilterdata : searchWord " >
       <div (click)="bookid(book)">
         
-          <mat-card class="card" style="width: 240px;  padding: 0px;" class="example-card">
-            <div  class="cartd-title "> <img src={{book.bookImage}} class="productimage"/></div>
+          <mat-card  class="example-card">
+            <div  class="card-title "> <img src={{book.bookImage}} class="productimage"/></div>
             
             <div class="abc">
             <mat-card-title  class="card-title product">{{book.bookName}}</mat-card-title>

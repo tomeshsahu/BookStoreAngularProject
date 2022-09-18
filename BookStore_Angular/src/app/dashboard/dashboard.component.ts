@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataservicesService } from 'src/Services/DataServices/dataservices.service';
+import { DataServiceService } from 'src/Services/DataServices/dataservices.service';
+
+
+
 
 @Component({
   selector: 'app-dashboard',
@@ -10,9 +13,11 @@ import { DataservicesService } from 'src/Services/DataServices/dataservices.serv
 })
 export class DashboardComponent implements OnInit {
 
-    searchText:string="";
-    press:boolean=false;
-  constructor(private route:Router,private dataservice:DataservicesService) { }
+  showFiller = false;
+  selectedMenu:any='Home';
+  press:boolean=false;
+  searchtext: string = ""; 
+  constructor(private route:Router,private dataservice:DataServiceService) { }
 
   ngOnInit(): void {
   }
@@ -36,18 +41,19 @@ export class DashboardComponent implements OnInit {
   SearchBox:any;
   value:any;
   searchTitle($event:any)
-  {
-      this.press = $event.target.value;    
+    {
+      this.press = $event.target.value;
+    
       this.value = this.press;
       let Ddata={
         type:'search',
         data:[this.value]
       }
-      console.log(this.press);
       this.dataservice.changeData(Ddata)
     }
     
   
+    
   }
 
 

@@ -1,10 +1,10 @@
 .container {
-    width: 80%;
+    width: 95%;
     display:flex;
     flex-flow: wrap;
     justify-content: start;
     margin-top: 2%;
-    margin:auto;
+    margin-left: 90px;
 }
 
 .note{
@@ -17,11 +17,18 @@
     padding-left: 3px;
     margin-bottom: 0;
     margin-left: 20px;
+
+}
+.example-card{
+  
+    width:230px;
+    margin:auto;
 }
 
 .card-title{
     font-size: 15px; 
     padding:10px;
+    margin: auto;
 }
 
 .card-describe{
@@ -36,7 +43,7 @@
 .productimage{
     height: 160px;
     width:130px;
-    margin-left: 55px;
+    margin-left: 35px;
     margin-top:10px;
 }
 
@@ -79,6 +86,42 @@
 .basetext{
     font-size: 20px;
     margin-top: 10px;
-    margin-left: 150px;
+    margin-left: 150px; 
+}
+
+.baseFlex{
+    display: flex;
+}
+.rightflex{
     
+    margin-left: 700px;
+}
+.searchbyrelavant{
+    padding:10px;
+    border-radius: 10px;
+    height: 100px;
+    width:100px;;
+}
+.range{
+    padding:10px;
+
+}
+.matselect {
+    color: brown;
+    height: 10px;
+    outline: none;
+}
+
+@media screen and (max-width:600px){
+    .container
+    {
+        margin-left:100px;
+    }
+}
+
+@media screen and (min-width:600px)and (max-width:1200px)
+{
+    .container{
+        margin-left: 80px;
+    }
 }

@@ -128,3 +128,26 @@
     .mainimg{
       height: 20px;
     }
+
+
+    //-----------
+
+    //-------media vquery----
+  @media screen and (min-width :315px) and (max-width :1200px){
+    .img-box{
+          display: none;
+          
+    }
+    .header{
+        display: none;
+    }
+    .form-box{
+      margin:auto;
+      text-align: center;
+      
+    }
+    .form-head
+    {
+        margin:auto;
+    }
+    }

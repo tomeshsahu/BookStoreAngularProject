@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CartdataService } from 'src/Services/BookServices/cartdata.service';
 
@@ -11,17 +12,23 @@ import { CartdataService } from 'src/Services/BookServices/cartdata.service';
 export class GetbookbyidComponent implements OnInit {
 getbook:any;
 Book:any;
-  constructor(private book:CartdataService,private route:Router) { }
+comment: any;
+rating: any;
+BookId: any;
+booksArr:any;
+  constructor(private book:CartdataService,private route:Router,private snack:MatSnackBar) { }
   ngOnInit(): void {
     this.Book=localStorage.getItem('bookid')
     console.log(this.Book);
     this.getbookid();
+    this.getFeedback();
     
   }
   getbookid()
   {
     this.book.bookidbyid(this.Book).subscribe((Request:any)=>
     {
+      console.log("Mohan Sahu",this.Book);
       console.log(Request);
       console.log(Request.data);
       this.getbook=Request.data;
@@ -53,6 +60,52 @@ Book:any;
       console.log(Request);
       this.route.navigateByUrl('dashboard/getwishlist')
     })
+  }
+
+
+
+
+  //-----------FeedBack-------------------
+  addFeedback(getbook:any) {
+    let data = {
+      TotalRating: parseFloat(this.rating),
+      comment: this.comment,
+      BookId: getbook.bookId,
+    };
+
+    console.log(data);
+
+    this.book.addFeadback(data).subscribe(
+      (response: any) => {
+        console.log('User Feedback', response);
+  
+        this.snack.open('add feedback  Successfull', '', {
+          duration: 3000,
+        })
+        this.getFeedback();
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
+   }
+
+
+
+   //---------get feedback
+
+
+   getFeedback() {
+    
+    console.log("fead Tomeshwar sahu")
+    console.log(this.Book);
+
+    this.book.getfeedBack(this.Book).subscribe((response: any) => {
+    
+      console.log(response);
+      this.booksArr=response.data;
+      console.log(this.booksArr);
+    });
   }
 
   

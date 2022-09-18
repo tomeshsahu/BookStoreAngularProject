@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GetbookbyidComponent } from './getbookbyid/getbookbyid.component';
 import { GetallcartComponent } from './getallcart/getallcart.component';
-import { AddtocartComponent } from './addtocart/addtocart.component';
 import {MatIconModule} from '@angular/material/icon';
 import { GetwishlistComponent } from './getwishlist/getwishlist.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -30,7 +30,8 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { GetallordersComponent } from './getallorders/getallorders.component';
 import { OrderplacedComponent } from './orderplaced/orderplaced.component';
-import { SearchdataComponent } from './searchdata/searchdata.component';
+import { PipefilterdataPipe } from './Pipedata/pipefilterdata.pipe';
+import {MatSelectModule} from '@angular/material/select'
 
 
 
@@ -46,12 +47,13 @@ import { SearchdataComponent } from './searchdata/searchdata.component';
     DashboardComponent,
     GetbookbyidComponent,
     GetallcartComponent,
-    AddtocartComponent,
     GetwishlistComponent,
     MyprofileComponent,
     GetallordersComponent,
     OrderplacedComponent,
-    SearchdataComponent,
+    PipefilterdataPipe,
+    
+
     
 
 
@@ -70,6 +72,8 @@ import { SearchdataComponent } from './searchdata/searchdata.component';
     MatIconModule,
     FontAwesomeModule,
     MatSnackBarModule,
+    CommonModule,
+    MatSelectModule
     
     
 

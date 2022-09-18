@@ -62,7 +62,32 @@ addtowishlist(BookId:any)
     return this.httpServices.postService(`/Controller/AddToWishList/${BookId}`,BookId,true,headers);
   }
 
+  addFeadback(reqdata:any)
+  {
+    let headers={
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': "Bearer " + this.token
+      })
+    }
+      console.log("Add FeedBack");
+      return this.httpServices.postService('/Controller/AddFeedBack',reqdata,true,headers);
+  }
 
+
+
+
+  getfeedBack(bookId:any)
+  {
+    let headers={
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': "Bearer " + this.token
+      })
+    }
+      console.log("Get FeedBack");
+      return this.httpServices.getService(`/Controller/GetAllFeedback/${bookId}`,true,headers);
+  }
 
 
 
